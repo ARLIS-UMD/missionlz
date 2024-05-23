@@ -112,10 +112,13 @@ module "linux-virtual-machine" {
   name                 = var.linux_name
   size                 = var.linux_size
   admin_username       = var.admin_username
-  admin_password       = random_password.linux-jumpbox-password.result
-  publisher            = var.linux_publisher
-  offer                = var.linux_offer
-  sku                  = var.linux_sku
-  image_version        = var.linux_image_version
-  tags                 = var.tags
+  //admin_password                  = random_password.linux-jumpbox-password.result
+  publisher       = var.linux_publisher
+  offer           = var.linux_offer
+  sku             = var.linux_sku
+  image_version   = var.linux_image_version
+  tags            = var.tags
+  disable_pw_auth = var.disable_pw_auth
+  keyvault_name   = var.keyvault_name
+
 }

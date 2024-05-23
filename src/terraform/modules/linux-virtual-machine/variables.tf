@@ -26,6 +26,12 @@ variable "name" {
   type        = string
 }
 
+variable "use_ssh_key" {
+  description = "Generate an SSH key instead of password"
+  type        = bool
+  default     = true
+}
+
 variable "size" {
   description = "The size of the virtual machine"
   type        = string
@@ -35,13 +41,23 @@ variable "admin_username" {
   description = "The admin username of the virtual machine"
   type        = string
 }
-
+/*
 variable "admin_password" {
   description = "The admin password of the virtual machine"
   type        = string
   sensitive   = true
 }
+*/
+variable "disable_pw_auth" {
+  description = "Boolean to turn off password auth"
+  type        = bool
+}
 
+variable "keyvault_name" {
+  description = "Name of vault with admin ssh key"
+  type        = string
+
+}
 variable "publisher" {
   description = "The publisher of the virtual machine source image"
   type        = string

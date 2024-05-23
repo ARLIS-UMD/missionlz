@@ -107,3 +107,13 @@ variable "tags" {
   default     = {}
   type        = map(string)
 }
+
+variable "disable_pw_auth" {
+  description = "Boolean to turn off password auth"
+  type        = bool
+}
+
+variable "keyvault_name" {
+  description = "The name of the keyvault to store jumpbox credentials in"
+  type        = string
+}
